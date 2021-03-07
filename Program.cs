@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Singletone;
+using System;
 
 namespace DesignPatterns
 {
@@ -6,7 +7,11 @@ namespace DesignPatterns
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            SingletoneForMultiThread firstInstance =  SingletoneForMultiThread.Instance;
+            SingletoneForMultiThread Secondinstance = SingletoneForMultiThread.Instance;
+            var x = ReferenceEquals(firstInstance, Secondinstance);
+
+            Console.WriteLine(x);
         }
     }
 }
